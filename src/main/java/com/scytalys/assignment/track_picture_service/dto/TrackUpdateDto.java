@@ -5,9 +5,13 @@ import jakarta.validation.constraints.DecimalMax;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.Instant;
 
+@Setter
+@Getter
 public class TrackUpdateDto {
 
     @NotBlank
@@ -36,59 +40,4 @@ public class TrackUpdateDto {
     @NotNull
     Identity identity;
 
-    public String getTrackId() {
-        return trackId;
-    }
-
-    public Instant getTimestamp() {
-        return timestamp;
-    }
-
-    public Double getLatitude() {
-        return latitude;
-    }
-
-    public Double getLongitude() {
-        return longitude;
-    }
-
-    public Double getAltitude() {
-        return altitude;
-    }
-
-    public Double getHeading() {
-        return heading;
-    }
-
-    public Identity getIdentity() {
-        return identity;
-    }
-
-    public void setTrackId(String trackId) {
-        this.trackId = trackId;
-    }
-
-    public void setTimestamp(Instant timestamp) {
-        this.timestamp = timestamp;
-    }
-
-    public void setLatitude(Double latitude) {
-        this.latitude = latitude;
-    }
-
-    public void setLongitude(Double longitude) {
-        this.longitude = longitude;
-    }
-
-    public void setAltitude(Double altitude) {
-        this.altitude = altitude;
-    }
-
-    public void setHeading(Double heading) {
-        this.heading = heading;
-    }
-
-    public void setIdentity(Identity identity) {
-        this.identity = identity;
-    }
 }

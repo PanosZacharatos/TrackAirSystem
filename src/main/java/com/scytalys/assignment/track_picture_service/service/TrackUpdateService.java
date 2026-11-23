@@ -5,9 +5,9 @@ import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validator;
 import org.springframework.stereotype.Service;
+import tools.jackson.core.JacksonException;
 import tools.jackson.databind.ObjectMapper;
 import java.util.Set;
-
 
 @Service
 public class TrackUpdateService {
@@ -34,8 +34,8 @@ public class TrackUpdateService {
 
             System.out.println("Successful track update with id " + trackUpdateDto.getTrackId());
 
-        }catch (Exception e){
-            System.out.println("Rejected due to: " + e.getMessage());
+        }catch (JacksonException e){
+            System.out.println("Rejected due to invalid message " + e.getMessage());
         }
     }
 }
