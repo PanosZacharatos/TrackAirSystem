@@ -15,6 +15,10 @@ public interface TrackHistoryRepository extends JpaRepository<TrackHistory,Long>
 
     List<TrackHistory> findByTrackIdAndTimestampBetweenOrderByTimestampDesc(String trackId, Instant from, Instant to);
 
+    List<TrackHistory> findByTrackIdAndTimestampGreaterThanEqualOrderByTimestampDesc(String trackId, Instant from);
+
+    List<TrackHistory> findByTrackIdAndTimestampLessThanEqualOrderByTimestampDesc(String trackId, Instant to);
+
     @Modifying
     @Query(value = """
         INSERT INTO track_history(
